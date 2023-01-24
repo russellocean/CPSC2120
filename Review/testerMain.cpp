@@ -4,7 +4,7 @@
 int main()
 {
     // Call testing functions here
-    ReadStdIn();
+    ReadWrite();
 
     return 0;
 }
