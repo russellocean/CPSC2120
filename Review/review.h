@@ -1,11 +1,14 @@
+/*
+ * Name: Russell Welch
+ * Date Submitted: 1/24/23
+ * Class Section: 002
+ * Assignment Name: Review
+ */
 #pragma once
 
 #include <string>
 
 #include <vector>
-
-
-
 
 int add(int a, int b);
 void ReadStdIn();
