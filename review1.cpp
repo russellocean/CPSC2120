@@ -5,21 +5,16 @@ int add(int a, int b)
     return a + b;
 }
 
-void ReadStdIn() {
-    int num;
-    double decimal;
-    std::string line;
-
-    while (std::cin >> num >> decimal >> line)
+// Your assignment is to read three space-separated values from stdin (ReadStdIn).  They will be an integer, a double, and a "single word" string, ending at the first whitespace character (in that order).  You must then print them to stdout on separate lines.
+void ReadStdIn()
+{
+    std::string input;
+    do
     {
-        std::cout << num << std::endl;
-        std::cout << decimal << std::endl;
-        std::cout << line << std::endl;
-    }
-
+        std::getline(std::cin, input);
+        std::cout << input << std::endl;
+    } while (input != "");
 }
-
-
 
 // You must write three functions named WriteOut, each with a single parameter.  One will take a string, one will take an integer, and one will take a double.  All functions will return an integer. 
 // print the parameter to stdout and return 1 if your input is a string
@@ -53,13 +48,15 @@ std::vector<int> InitializeArray(int size)
     return v;
 }
 
-
+// This project will test your ability to read in an unknown number of items from stdin.
+// You will make a method named ReadStdIn2, which takes no parameters.  It will read from standard in until the input is "q", then stop.
+// This method will print an integer, the number of items you have read in (not including "q").  Input is case-sensitive.
 void ReadStdIn2()
 {
     std::string input;
     int count = 0;
 
-    while (std::cin >> input && input != "q")
+    while(std::getline(std::cin, input) && input != "q")
         count++;
 
     std::cout << count << std::endl;
@@ -72,7 +69,7 @@ void ReadWrite()
     std::string input;
     std::string output;
 
-    while (std::cin >> input && input != "q")
+    while(std::getline(std::cin, input) && input != "q")
         output += input + " ";
     
     std::cout << output << std::endl;
