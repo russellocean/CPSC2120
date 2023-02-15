@@ -1,4 +1,4 @@
-#include "IntegerArrayQueue.h"
+#include "../IntegerArrayQueue.h"
 
 #include <iostream>
 #include <string>

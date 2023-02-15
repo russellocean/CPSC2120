@@ -4,34 +4,56 @@
 // p and afterp are pointers to the nodes to be swapped.
 void swapWithNext(Node * p)
 {
+    // Return if p is null or p->next is null (i.e., the node is the tail node)
+    // or p->next->next is null (i.e., the next node is the tail node)
+    if (p == nullptr || p->next == nullptr || p->next->next == nullptr)
+    {
+        return;
+    }
+    
+    // Get pointers to the node after p and the node after that
+    Node * afterp = p->next;
+    Node * beforep = p->prev;
+    Node * afterafterp = afterp->next;
+    
+    // Update the prev and next pointers of the nodes involved in the swap
+    beforep->next = afterp;
+    afterp->prev = beforep;
+    afterp->next = p;
+    p->prev = afterp;
+    p->next = afterafterp;
+    afterafterp->prev = p;
 }
 
+
+
+
 //Be sure to comment out the main() function when submitting to codePost
-int main()
-{
-    int array[] = {1, 3, 6, 10, 15, 21, 28, 36, 45, 55};
-    Node * head = arrayToList(array, 10);
-    printForwards(head);
-    printBackwards(getTail(head));
+// int main()
+// {
+//     int array[] = {1, 3, 6, 10, 15, 21, 28, 36, 45, 55};
+//     Node * head = arrayToList(array, 10);
+//     printForwards(head);
+//     printBackwards(getTail(head));
     
-    cout << "Swap [0],[1]" << endl;
-    Node * p = getNode(head, 0);
-    swapWithNext(p);
-    printForwards(head);
-    printBackwards(getTail(head));
+//     cout << "Swap [0],[1]" << endl;
+//     Node * p = getNode(head, 0);
+//     swapWithNext(p);
+//     printForwards(head);
+//     printBackwards(getTail(head));
     
-    cout << "Swap [4],[5]" << endl;
-    p = getNode(head, 4);
-    swapWithNext(p);
-    printForwards(head);
-    printBackwards(getTail(head));
+//     cout << "Swap [4],[5]" << endl;
+//     p = getNode(head, 4);
+//     swapWithNext(p);
+//     printForwards(head);
+//     printBackwards(getTail(head));
     
-    cout << "Swap [8],[9]" << endl;
-    p = getNode(head, 8);
-    swapWithNext(p);
-    printForwards(head);
-    printBackwards(getTail(head));
-}
+//     cout << "Swap [8],[9]" << endl;
+//     p = getNode(head, 8);
+//     swapWithNext(p);
+//     printForwards(head);
+//     printBackwards(getTail(head));
+// }
 
 //Do not modify any functions below this line
 Node * arrayToList(int array[], int size)

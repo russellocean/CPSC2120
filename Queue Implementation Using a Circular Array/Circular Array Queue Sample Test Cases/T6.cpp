@@ -1,4 +1,4 @@
-#include "IntegerArrayQueue.h"
+#include "../IntegerArrayQueue.h"
 
 using namespace std;
 
