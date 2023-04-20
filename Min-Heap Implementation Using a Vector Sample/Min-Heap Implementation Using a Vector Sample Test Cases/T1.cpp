@@ -1,7 +1,7 @@
 #include <vector>
 #include <iostream>
 
-#include "minHeap.h"
+#include "../minHeap.h"
 
 //using testing::ElementsAreArray;
 
