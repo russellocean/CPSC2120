@@ -30,6 +30,7 @@ CPSC2120
 ├── Single-Word Anagram Finder
 ├── Stack-based Postfix Expression Calculator
 ├── Swapping Nodes in a Doubly Linked List
+├── Word Ladder
 ├── .gitignore
 └── README.md
 ```
